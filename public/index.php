@@ -1,29 +1,55 @@
 <?php
-if (PHP_SAPI == 'cli-server') {
-    // To help the built-in PHP dev server, check if the request was actually for
-    // something which should probably be served as a static file
-    $file = __DIR__ . $_SERVER['REQUEST_URI'];
-    if (is_file($file)) {
-        return false;
-    }
-}
+use \Psr\Http\Message\ServerRequestInterface as Request;
+use \Psr\Http\Message\ResponseInterface as Response;
 
-require __DIR__ . '/../vendor/autoload.php';
+require '../vendor/autoload.php';
 
-session_start();
+//Acces DB
+$user = 'root';
+$pass = '';
+$dbname = 'BelVins';
 
-// Instantiate the app
-$settings = require __DIR__ . '/../src/settings.php';
-$app = new \Slim\App($settings);
+//REDBEAN
+define('LIB_PATH',__DIR__.'../../vendor/RedBean/');
+require LIB_PATH.'rb.php';
+R::setup('mysql:host=localhost;dbname=' . $dbname, $user, $pass);
 
-// Set up dependencies
-require __DIR__ . '/../src/dependencies.php';
 
-// Register middleware
-require __DIR__ . '/../src/middleware.php';
+// Create app
+$app = new \Slim\App(array(
+    'debug' => true
+));
 
-// Register routes
-require __DIR__ . '/../src/routes.php';
+// Get container
+$container = $app->getContainer();
+
+// Register component on container
+$container['view'] = function ($container) {
+    $view = new \Slim\Views\Twig('../templates', [
+        //'cache' => '../templates/cache'
+    ]);
+    $view->addExtension(new \Slim\Views\TwigExtension(
+        $container['router'],
+        $container['request']->getUri()
+    ));
+
+    return $view;
+};
+
+// Render Twig template in route
+$app->get('/hello/{name}', function ($request, $response, $args) {
+    return $this->view->render($response, 'profile.html', [
+        'name' => $args['name']
+    ]);
+})->setName('profile');
+
+//Chercher tout les vins
+$app->get('/api/wine',  function($request, $response, $args){
+    $vinsORM = R::findAll('wine');
+    $vinsJSON = R::exportAll( $vinsORM );
+
+    return $this->view->render($response, 'listing.html', array('vins' => $vinsJSON));
+})->setName('getWines');
 
 // Run app
 $app->run();

@@ -51,5 +51,14 @@ $app->get('/api/wine',  function($request, $response, $args){
     return $this->view->render($response, 'listing.html', array('vins' => $vinsJSON));
 })->setName('getWines');
 
+//Chercher vin par id
+$app->get('/api/wine/{id:[0-9]+}',  function($request, $response, $args){
+    $id = $args['id'];
+    $vinsORM = R::load('wine', $id);
+    $vinsJSON = $vinsORM->export();
+
+    return $this->view->render($response, 'listing.html', array('vins' => $vinsJSON));
+})->setName('getWinesById');
+
 // Run app
 $app->run();

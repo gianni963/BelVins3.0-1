@@ -118,5 +118,44 @@ $app->delete('/api/wine/{id:[0-9]+}', function ($request, $response, $args){
     R::trash($vinsORM);
 })->setName('deleteWinesById');
 
+//Modifier un vin
+$app->put('/api/wine/{id:[0-9]+}',  function($request, $response, $args){
+    $id = $args['id'];
+    $vinsORM = R::load('wine', $id);
+
+    if(!empty($_POST['name'])){
+        $vinsORM->name = $_POST['name'];
+    }
+    if(!empty($_POST['year'])){
+        $vinsORM->year = $_POST['year'];
+    }
+    if(!empty($_POST['grapes'])){
+        $vinsORM->grapes = $_POST['grapes'];
+    }
+    if(!empty($_POST['country'])){
+        $vinsORM->country = $_POST['country'];
+    }
+    if(!empty($_POST['region'])){
+        $vinsORM->region = $_POST['region'];
+    }
+    if(!empty($_POST['description'])){
+        $vinsORM->description = $_POST['description'];
+    }
+    if(!empty($_FILES['picture'])){
+        $resultat = move_uploaded_file($_FILES['picture']['tmp_name'],'../pictures/' . $_FILES['picture']['name']);
+        $vinsORM->picture = $_FILES['picture']['name'];
+    }
+
+    if(!empty($vinsORM->name) &&
+        !empty($vinsORM->year) &&
+        !empty($vinsORM->grapes) &&
+        !empty($vinsORM->country) &&
+        !empty($vinsORM->region) &&
+        !empty($vinsORM->description) &&
+        !empty($vinsORM->picture)){
+        R::store($vinsORM);
+    }
+})->setName('modifWines');
+
 // Run app
 $app->run();

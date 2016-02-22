@@ -73,5 +73,43 @@ $app->get('/api/wine/{id}',  function($request, $response, $args){
     return $this->view->render($response, 'listing.html', array('vins' => $vinsJSON));
 })->setName('getWinesById');
 
+//Rajouter un vins
+$app->post('/api/wine',  function($request, $response, $args){
+    $wine = R::dispense('wine');
+
+    if(!empty($_POST['name'])){
+        $wine->name = $_POST['name'];
+    }
+    if(!empty($_POST['year'])){
+        $wine->year = $_POST['year'];
+    }
+    if(!empty($_POST['grapes'])){
+        $wine->grapes = $_POST['grapes'];
+    }
+    if(!empty($_POST['country'])){
+        $wine->country = $_POST['country'];
+    }
+    if(!empty($_POST['region'])){
+        $wine->region = $_POST['region'];
+    }
+    if(!empty($_POST['description'])){
+        $wine->description = $_POST['description'];
+    }
+    if(!empty($_FILES['picture'])){
+        $resultat = move_uploaded_file($_FILES['picture']['tmp_name'],'../pictures/' . $_FILES['picture']['name']);
+        $wine->picture = $_FILES['picture']['name'];
+    }
+
+    if(!empty($wine->name) &&
+        !empty($wine->year) &&
+        !empty($wine->grapes) &&
+        !empty($wine->country) &&
+        !empty($wine->region) &&
+        !empty($wine->description) &&
+        !empty($wine->picture)){
+        R::store($wine);
+    }
+})->setName('ajoutWines');
+
 // Run app
 $app->run();

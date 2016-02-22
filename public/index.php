@@ -111,5 +111,12 @@ $app->post('/api/wine',  function($request, $response, $args){
     }
 })->setName('ajoutWines');
 
+//Supprimer un vin avec l'id
+$app->delete('/api/wine/{id:[0-9]+}', function ($request, $response, $args){
+    $id = $args['id'];
+    $vinsORM = R::load('wine', $id);
+    R::trash($vinsORM);
+})->setName('deleteWinesById');
+
 // Run app
 $app->run();

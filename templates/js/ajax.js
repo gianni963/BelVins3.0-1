@@ -13,7 +13,9 @@ $(document).ready(function() {
                 },
                 mouseout:function () {
                     $(this).removeClass('highlight');
-                }/*,
+                },
+                
+                /*
                  TODO:click: highlight la sélection
                  TODO:click: ajouté une classe "selected"
                  TODO:click sur un autre élèment: retirez la classe "selected"

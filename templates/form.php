@@ -22,7 +22,7 @@
         body {
             font-family: sans-serif;
         }
-        .highlight {
+        .highlight, .selected {
             background-color: #800020;
             color: white;
         }

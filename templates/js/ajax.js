@@ -1,5 +1,7 @@
 $(document).ready(function() {
-    $.ajax("js/vins.json",{// Lancement d'Ajax en reliant la source du fichier des données
+    $.ajax({// Lancement d'Ajax en reliant la source du fichier des données
+        url:"js/vins.json",
+        cache: false,
         success: function(vins){
         //Menu des vins
             //Récupération des noms de vins
@@ -14,19 +16,19 @@ $(document).ready(function() {
                 mouseout:function () {
                     $(this).removeClass('highlight');
                 },
+                click: function(){
+                    if ($("li").hasClass("selected"))
+                        $("li").removeClass("selected");
+                    if ($("li").hasClass("highlight"))
+                        $(this).addClass("selected");
+                }
 
-                /*
-                 TODO:click: highlight la sélection
-                 TODO:click: ajouté une classe "selected"
-                 TODO:click sur un autre élèment: retirez la classe "selected"
-
-                 */
-            },//liste des events,
+            },// fin liste des events sur #listeVins
             "li"
             );
 
 
-            /* TO FIX
+            /* FIXME
             $("li").on('click', function () {
                 //$(this).addClass('highlight');
                 var id = $(this).attr("id");
@@ -48,7 +50,7 @@ $(document).ready(function() {
             });
             */
         },
-        error:function(){alert("Impossible de récupérer la Base de données. Veuillez contacter l'administrateur du site");}
+        error:function(){alert("Impossible de rcup&eacute;rer la Base de donn&eacute;es. Veuillez contacter l'administrateur du site");}
 
     });
 });

@@ -1,17 +1,28 @@
 $(document).ready(function() {
     $.ajax("js/vins.json",{// Lancement d'Ajax en reliant la source du fichier des données
         success: function(vins){
-            //console.log(vins); // Récupération de toute la BD OK
-            //console.log(vins[0].name);
+        //Menu des vins
+            //Récupération des noms de vins
             for (var i in vins) {
                 $("#listeVin").append("<li>" + vins[i].name + "</li>");
             }
-            $("li").on('mouseover', function () {
-                $(this).addClass('highlight');
-            });
-            $("li").on('mouseout', function () {
-                $(this).removeClass('highlight');
-            });
+            //Animation
+            $("#listeVin").on({
+                mouseover:function () {
+                    $(this).addClass('highlight');
+                },
+                mouseout:function () {
+                    $(this).removeClass('highlight');
+                }/*,
+                 TODO:click: highlight la sélection
+                 TODO:click: ajouté une classe "selected"
+                 TODO:click sur un autre élèment: retirez la classe "selected"
+
+                 */
+            },//liste des events,
+            "li"
+            );
+
 
             /* TO FIX
             $("li").on('click', function () {

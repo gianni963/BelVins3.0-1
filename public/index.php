@@ -170,9 +170,24 @@ $app->get('/api/wine/filter/{type}',  function($request, $response, $args){
         $vinsJSON = R::exportAll( $vinsORM );
     }
 
-
     return $this->view->render($response, 'listing.html', array('vins' => $vinsJSON));
 })->setName('filterWines');
+
+//Système de pagination
+$app->get('/api/wine/page/{number:[0-9]+}',  function($request, $response, $args){
+    $number = $args['number'];
+    $vinsJSON = '';
+    $nbWines = 6;
+    $nextwine = ($number - 1) * $nbWines;
+
+
+    $vinsORM = R::findAll('wine',' LIMIT :nbWines OFFSET :nextWine',
+        array(':nbWines' => $nbWines, ':nextWine' => $nextwine)
+    );
+    $vinsJSON = R::exportAll( $vinsORM );
+
+    return $this->view->render($response, 'listing.html', array('vins' => $vinsJSON));
+})->setName('pagesWines');
 
 // Run app
 $app->run();

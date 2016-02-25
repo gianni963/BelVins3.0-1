@@ -6,9 +6,25 @@ $(document).ready(function() {
         success: function(vins){
         //Menu des vins
             //Récupération des noms de vins
+            var liste =[];
             for (var i in vins) {
                 $("#listeVin").append("<li>" + vins[i].name + "</li>");
+                liste.push(vins[i].name);
             }
+            //JQUERYUI: Autocomplete
+            $.getScript("js/jquery-ui.js",function(){
+                $("#searchVin").autocomplete({
+                    source: liste,
+                    my: "bottom"
+                });
+                $("#searchVin").click(function(){
+                    //var search = $("ui-autocomplete-input").val();fixme
+                    //console.log(search);
+                    //$("#listeVin").index(search);
+                });
+
+            });
+
             //Animations
             $("#listeVin").on({
                 mouseover:function () {
@@ -47,10 +63,16 @@ $(document).ready(function() {
                         }
                     }
                 }// fin du event "click"
+
             },// fin liste des events sur #listeVins
             "li"
             ); //fin de .on()
 
+            /*
+            SI BESOIN--Empêcher les envois des formulaires
+            $("form").on("submit", function (event) {
+                event.preventDefault();
+            }); */
 
         },
         error:function(){alert("Impossible de rcup&eacute;rer la Base de donn&eacute;es. Veuillez contacter l'administrateur du site");}

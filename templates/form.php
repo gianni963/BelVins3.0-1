@@ -13,7 +13,7 @@
         div {
             float: left;
         }
-        ul {
+        #listeVin {
             list-style-type: none;
         }
         li {
@@ -29,13 +29,28 @@
         #imgVin {
             visibility: hidden;
         }
+        .ui-menu{
+            background-color: white;
+            z-index: 3;
+            border: solid black 1px;
+        }
+
+        .ui-menu li {
+            display: block;
+        }
+        .ui-menu li:hover {
+            background-color: #7253C9;
+            color: white;
+        }
+        .ui-helper-hidden-accessible {
+            display:none;
+        }
     </style>
 </head>
 <body>
 <div>
     <form id="frmSearchVin">
         <input type="search" id="searchVin" name="searchVin" />
-        <button type="button" id="btSearch" name="btSearch" value="Search">Search</button>
     </form>
     <ul id="listeVin">
     </ul>

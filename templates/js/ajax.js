@@ -8,23 +8,9 @@ $(document).ready(function() {
             //Récupération des noms de vins
             var liste =[];
             for (var i in vins) {
-                $("#listeVin").append("<li>" + vins[i].name + "</li>");
+                $("#listeVin").append("<li data-id='"+vins[i].id+"'>" + vins[i].name + "</li>");
                 liste.push(vins[i].name);
             }
-            //JQUERYUI: Autocomplete
-            $.getScript("js/jquery-ui.js",function(){
-                $("#searchVin").autocomplete({
-                    source: liste,
-                    my: "bottom"
-                });
-                $("#searchVin").click(function(){
-                    //var search = $("ui-autocomplete-input").val();fixme
-                    //console.log(search);
-                    //$("#listeVin").index(search);
-                });
-
-            });
-
             //Animations
             $("#listeVin").on({
                 mouseover:function () {
@@ -64,16 +50,47 @@ $(document).ready(function() {
                     }
                 }// fin du event "click"
 
-            },// fin liste des events sur #listeVins
+            },// fin liste des events sur #listeVin
             "li"
             ); //fin de .on()
+            //JQUERYUI: Autocomplete
+            $.getScript("js/jquery-ui.js",function(){
+                $("#searchVin").autocomplete({
+                        source: liste,
+                        position: {
+                            my: "top",
+                            at: "bottom"
+                        },
+                        select : function(event, ui){
+                            var choice = ui.item.value;
+                            $(this).closest("body").find("#listeVin li.selected").removeClass("selected");
+                            $(this).closest("body").find("#listeVin li:contains("+choice+")").addClass( "selected" );
+                            var vin = $(this).closest("body").find("#listeVin li.selected");
+                            var id_wine = vin.data("id");
+                            console.log(vins[id_wine]);
+                            var traversing = $(this).closest("body");
+                            var src_pic= "pics/"+ vins[id_wine].picture;
+                            var alt_pic= "bouteille de /"+ vins[id_wine].name;
 
-            /*
-            SI BESOIN--Empêcher les envois des formulaires
-            $("form").on("submit", function (event) {
-                event.preventDefault();
-            }); */
+                            traversing.find('#idVin').val(vins[id_wine].id);
+                            traversing.find('#nameVin').val(vins[id_wine].name);
+                            traversing.find('#grapesVin').val(vins[id_wine].grapes);
+                            traversing.find('#countryVin').val(vins[id_wine].country);
+                            traversing.find('#regionVin').val(vins[id_wine].region);
+                            traversing.find('#yearVin').val(vins[id_wine].year);
+                            traversing.find('#description').val(vins[id_wine].description);
+                            traversing.find('#imgVin').attr("src", src_pic);
+                            traversing.find('#imgVin').attr("alt", alt_pic);
+                            traversing.find('#imgVin').css("visibility", "visible");
 
+
+
+                        }
+
+                    }
+                );
+
+            });
         },
         error:function(){alert("Impossible de rcup&eacute;rer la Base de donn&eacute;es. Veuillez contacter l'administrateur du site");}
 

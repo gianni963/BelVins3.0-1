@@ -25,7 +25,7 @@
       <file leaf-file-name="listing.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/listing.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.076923">
+            <state vertical-scroll-proportion="0.0">
               <caret line="102" column="11" selection-start-line="102" selection-start-column="11" selection-end-line="102" selection-end-column="11" />
               <folding />
             </state>
@@ -35,8 +35,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6423562">
-              <caret line="152" column="35" selection-start-line="152" selection-start-column="35" selection-end-line="152" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.42777">
+              <caret line="154" column="32" selection-start-line="154" selection-start-column="32" selection-end-line="154" selection-end-column="32" />
               <folding>
                 <element signature="e#6#62#0#PHP" expanded="true" />
               </folding>
@@ -47,7 +47,7 @@
       <file leaf-file-name="modif.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/modif.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
+            <state vertical-scroll-proportion="0.0">
               <caret line="0" column="49" selection-start-line="0" selection-start-column="49" selection-end-line="0" selection-end-column="49" />
               <folding />
             </state>
@@ -57,7 +57,7 @@
       <file leaf-file-name="delete.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/delete.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
+            <state vertical-scroll-proportion="0.0">
               <caret line="0" column="14" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="24" />
               <folding />
             </state>
@@ -67,7 +67,7 @@
       <file leaf-file-name="form.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/form.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.115385">
+            <state vertical-scroll-proportion="0.0">
               <caret line="17" column="7" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
               <folding />
             </state>
@@ -77,7 +77,7 @@
       <file leaf-file-name="rb.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/RedBean/rb.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.0">
+            <state vertical-scroll-proportion="0.0">
               <caret line="4783" column="29" selection-start-line="4783" selection-start-column="29" selection-end-line="4783" selection-end-column="29" />
               <folding>
                 <marker date="1455889062169" expanded="true" signature="104160:104287" placeholder="INSERT INTO ${$table}... " />
@@ -301,18 +301,18 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -331,6 +331,109 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/templates/listing.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="102" column="11" selection-start-line="102" selection-start-column="11" selection-end-line="102" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#6#62#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/modif.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="49" selection-start-line="0" selection-start-column="49" selection-end-line="0" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/delete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="14" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="7" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/RedBean/rb.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4783" column="29" selection-start-line="4783" selection-start-column="29" selection-end-line="4783" selection-end-column="29" />
+          <folding>
+            <marker date="1455889062169" expanded="true" signature="104160:104287" placeholder="INSERT INTO ${$table}... " />
+            <marker date="1455889062169" expanded="true" signature="104557:104598" placeholder="INSERT INTO ${$table}... " />
+            <marker date="1455889062169" expanded="true" signature="108081:108112" placeholder="ALTER TABLE ${$table}... " />
+            <marker date="1455889062169" expanded="true" signature="108765:108782" placeholder="UPDATE ${$ta... " />
+            <marker date="1455889062169" expanded="true" signature="110477:110532" placeholder="SELECT ${{$f... " />
+            <marker date="1455889062169" expanded="true" signature="111672:112099" placeholder="SELECT ${{$d... " />
+            <marker date="1455889062169" expanded="true" signature="112204:112438" placeholder="SELECT ${{$d... " />
+            <marker date="1455889062169" expanded="true" signature="113279:113432" placeholder="SELECT ${{$l... " />
+            <marker date="1455889062169" expanded="true" signature="113562:113663" placeholder="SELECT ${{$l... " />
+            <marker date="1455889062169" expanded="true" signature="114268:114524" placeholder="SELECT ${{$t... " />
+            <marker date="1455889062169" expanded="true" signature="115069:115099" placeholder="SELECT COUNT... $" />
+            <marker date="1455889062169" expanded="true" signature="115608:115844" placeholder="SELECT COUNT... $" />
+            <marker date="1455889062169" expanded="true" signature="115968:116118" placeholder="SELECT COUNT... $" />
+            <marker date="1455889062169" expanded="true" signature="116595:116616" placeholder="DELETE FROM " />
+            <marker date="1455889062169" expanded="true" signature="116980:117062" placeholder="DELETE FROM " />
+            <marker date="1455889062169" expanded="true" signature="117156:117207" placeholder="DELETE FROM " />
+            <marker date="1455889062169" expanded="true" signature="117623:117665" placeholder="ALTER TABLE ${$table}... " />
+            <marker date="1455889062169" expanded="true" signature="121379:121559" placeholder="SELECT count... KEY_COLUMN_USAGE" />
+            <marker date="1455889062169" expanded="true" signature="122038:122171" placeholder="ALTER TABLE ${$this-&gt;esc( $table )}... " />
+            <marker date="1455889062169" expanded="true" signature="122230:122363" placeholder="ALTER TABLE ${$this-&gt;esc( $table )}... " />
+            <marker date="1455889062169" expanded="true" signature="124111:124273" placeholder="CREATE TABLE... ${$table}" />
+            <marker date="1455889062169" expanded="true" signature="127024:127107" placeholder="ALTER TABLE ${$table}... " />
+            <marker date="1455889062169" expanded="true" signature="127962:128187" placeholder="SELECT CONST... KEY_COLUMN_USAGE" />
+            <marker date="1455889062169" expanded="true" signature="128348:128529" placeholder="ALTER TABLE $" />
+            <marker date="1455889062169" expanded="true" signature="129323:129348" placeholder="DROP TABLE I... " />
+            <marker date="1455889062169" expanded="true" signature="131769:131800" placeholder="DROP TABLE I... " />
+            <marker date="1455889062169" expanded="true" signature="132040:132085" placeholder="INSERT INTO tmp_backup... " />
+            <marker date="1455889062169" expanded="true" signature="132063:132085" placeholder="SELECT * FRO... ${$table}" />
+            <marker date="1455889062169" expanded="true" signature="132136:132155" placeholder="DROP TABLE `... " />
+            <marker date="1455889062169" expanded="true" signature="132561:132650" placeholder="CREATE TABLE... ${$table}" />
+            <marker date="1455889062169" expanded="true" signature="133048:133093" placeholder="INSERT INTO `${$table}`... " />
+            <marker date="1455889062169" expanded="true" signature="133069:133093" placeholder="SELECT * FRO... tmp_backup" />
+            <marker date="1455889062169" expanded="true" signature="133107:133128" placeholder="DROP TABLE t... " />
+            <marker date="1455889062169" expanded="true" signature="137726:137761" placeholder="ALTER TABLE `${$table}`... " />
+            <marker date="1455889062169" expanded="true" signature="138357:138437" placeholder="SELECT name sqlite_master" />
+            <marker date="1455889062169" expanded="true" signature="138579:138639" placeholder="CREATE TABLE... ${$table}" />
+            <marker date="1455889062169" expanded="true" signature="140351:140363" placeholder="DELETE FROM " />
+            <marker date="1455889062169" expanded="true" signature="140786:140811" placeholder="DROP TABLE I... " />
+            <marker date="1455889062169" expanded="true" signature="140888:140913" placeholder="DROP TABLE I... " />
+            <marker date="1455889062169" expanded="true" signature="143161:143701" placeholder="SELECT c.oid... pg_class" />
+            <marker date="1455889062169" expanded="true" signature="143787:143901" placeholder="ALTER TABLE \&quot;${$table}\&quot;... " />
+            <marker date="1455889062169" expanded="true" signature="143952:144066" placeholder="ALTER TABLE \&quot;${$table}\&quot;... " />
+            <marker date="1455889062169" expanded="true" signature="145532:145633" placeholder="SELECT table... tables" />
+            <marker date="1455889062169" expanded="true" signature="145788:145831" placeholder="CREATE TABLE... ${$table}" />
+            <marker date="1455889062169" expanded="true" signature="146009:146096" placeholder="SELECT colum... columns" />
+            <marker date="1455889062169" expanded="true" signature="148383:148395" placeholder="ALTER TABLE ${$table}... " />
+            <marker date="1455889062169" expanded="true" signature="148773:149066" placeholder="SELECT i.rel... pg_class" />
+            <marker date="1455889062169" expanded="true" signature="149281:149382" placeholder="ALTER TABLE \&quot;${$table}\&quot;... " />
+            <marker date="1455889062169" expanded="true" signature="150071:150124" placeholder="SELECT COUNT... pg_class" />
+            <marker date="1455889062169" expanded="true" signature="150506:150706" placeholder="SELECT const... KEY_COLUMN_USAGE" />
+            <marker date="1455889062169" expanded="true" signature="150844:150998" placeholder="ALTER TABLE $" />
+            <marker date="1455889062169" expanded="true" signature="151333:151364" placeholder="DROP TABLE I... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/listing.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -404,7 +507,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/RedBean/rb.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="4783" column="29" selection-start-line="4783" selection-start-column="29" selection-end-line="4783" selection-end-column="29" />
           <folding>
             <marker date="1455889062169" expanded="true" signature="104160:104287" placeholder="INSERT INTO ${$table}... " />
@@ -465,7 +568,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/form.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.115385">
+        <state vertical-scroll-proportion="0.0">
           <caret line="17" column="7" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
           <folding />
         </state>
@@ -473,7 +576,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/listing.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.076923">
+        <state vertical-scroll-proportion="0.0">
           <caret line="102" column="11" selection-start-line="102" selection-start-column="11" selection-end-line="102" selection-end-column="11" />
           <folding />
         </state>
@@ -497,8 +600,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6423562">
-          <caret line="152" column="35" selection-start-line="152" selection-start-column="35" selection-end-line="152" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.42777">
+          <caret line="154" column="32" selection-start-line="154" selection-start-column="32" selection-end-line="154" selection-end-column="32" />
           <folding>
             <element signature="e#6#62#0#PHP" expanded="true" />
           </folding>

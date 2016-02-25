@@ -36,12 +36,7 @@ $container['view'] = function ($container) {
     return $view;
 };
 
-// Render Twig template in route
-$app->get('/hello/{name}', function ($request, $response, $args) {
-    return $this->view->render($response, 'profile.html', [
-        'name' => $args['name']
-    ]);
-})->setName('profile');
+// ROUTING
 
 //Chercher tout les vins
 $app->get('/api/wine',  function($request, $response, $args){
@@ -156,6 +151,28 @@ $app->put('/api/wine/{id:[0-9]+}',  function($request, $response, $args){
         R::store($vinsORM);
     }
 })->setName('modifWines');
+
+//Trier vin par id, nom ou année
+$app->get('/api/wine/filter/{type}',  function($request, $response, $args){
+    $type = $args['type'];
+    $vinsJSON = '';
+
+    if($type === 'name'){
+        $vinsORM = R::findAll('wine',' ORDER by name');
+        $vinsJSON = R::exportAll( $vinsORM );
+    }
+    if($type === 'id'){
+        $vinsORM = R::findAll('wine',' ORDER by id');
+        $vinsJSON = R::exportAll( $vinsORM );
+    }
+    if($type === 'year'){
+        $vinsORM = R::findAll('wine',' ORDER by year');
+        $vinsJSON = R::exportAll( $vinsORM );
+    }
+
+
+    return $this->view->render($response, 'listing.html', array('vins' => $vinsJSON));
+})->setName('filterWines');
 
 // Run app
 $app->run();

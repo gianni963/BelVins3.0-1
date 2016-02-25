@@ -31,8 +31,8 @@
         }
     </style>
     <script>
-        var json;
-        json = {{ vins|json_encode(constant('JSON_PRETTY_PRINT'))|raw }};
+        //var json;
+        //json = {{ vins|json_encode(constant('JSON_PRETTY_PRINT'))|raw }};
     </script>
 </head>
 <body>
@@ -66,57 +66,6 @@
         <button type="button" id="btDelete" name="btDelete">Delete</button>
     </form>
 </div>
-<script src="../js/jquery-1.12.0.js"></script>
-<script>
-    $(document).ready(function() {
-        //Ajax TODO: trouver un moyen d'utiliser $JSON.parse()
-        $.ajax("./listing.php",{// Lancement d'Ajax en reliant la source du fichier des données TODO: changer URL
-            success: function(response){
-                console.log(response); // Récupération de toute la BD
-            }
-        });
-        //console.log(json[0].name);//récupération bd dans var ok
-        for (var i in json) {
-            $("#listeVin").append("<li>" + json[i].name + "</li>");
-        }
-        $("li").on('mouseover', function () {
-            $(this).addClass('highlight');
-        });
-        $("li").on('mouseout', function () {
-            $(this).removeClass('highlight');
-        });
-        $("li").on('click', function () {
-            //$(this).addClass('highlight');
-            var id = $(this).attr("id");
-            //console.log(id);
-            var traversing = $(this).closest("body");
-            traversing.find('#idVin').val(id);
-            traversing.find('#nameVin').val(json[id].name);
-            traversing.find('#grapesVin').val(json[id].grapes);
-            traversing.find('#countryVin').val(json[id].country);
-            traversing.find('#regionVin').val(json[id].region);
-            traversing.find('#yearVin').val(json[id].year);
-            traversing.find('#description').val(json[id].description);
-            traversing.find('#imgVin').attr("src", json[id].picture);
-            traversing.find('#imgVin').attr("alt", json[id].name);
-            traversing.find('#imgVin').css("visibility", "visible");
-        });
-        //JQUERYUI: Autocomplete
-        var autocompleteVins = [];
-        for (var i in json)
-            autocompleteVins.push(json[i].name);
-
-        console.log(autocompleteVins);
-
-        $(function () {
-            autocompleteVins;
-        });
-        $("#searchVin").autocomplete({source: autocompleteVins});
-        //Empêcher les envois des formulaires
-        $("form").on("submit", function (event) {
-            event.preventDefault();
-        })
-    });
-</script>
+<script src="./js/jquery-1.12.0.js"></script>
 </body>
 </html>

@@ -13,7 +13,7 @@
         div {
             float: left;
         }
-        ul {
+        #listeVin {
             list-style-type: none;
         }
         li {
@@ -22,30 +22,41 @@
         body {
             font-family: sans-serif;
         }
-        .highlight {
+        .highlight, .selected {
             background-color: #800020;
             color: white;
         }
         #imgVin {
             visibility: hidden;
         }
+        .ui-menu{
+            background-color: white;
+            z-index: 3;
+            border: solid black 1px;
+        }
+
+        .ui-menu li {
+            display: block;
+        }
+        .ui-menu li:hover {
+            background-color: #7253C9;
+            color: white;
+        }
+        .ui-helper-hidden-accessible {
+            display:none;
+        }
     </style>
-    <script>
-        //var json;
-        //json = {{ vins|json_encode(constant('JSON_PRETTY_PRINT'))|raw }};
-    </script>
 </head>
 <body>
 <div>
     <form id="frmSearchVin">
         <input type="search" id="searchVin" name="searchVin" />
-        <button type="button" id="btSearch" name="btSearch" value="Search">Search</button>
     </form>
     <ul id="listeVin">
     </ul>
 </div>
 <div>
-    <form action="<?= $app->urlFor('ajoutWines'); ?>" id="formVin" method="post">
+    <form action="#" id="formVin" method="post"> <!-- $app->urlFor('ajoutWines');  retiré pour afficher le form-->
         <input type="reset" id="btReset" name="btReset" value="New">
         <label for="idVin">Id:</label>
         <input type="text" id="idVin" name="name" maxlength="50" readonly/>
@@ -66,6 +77,7 @@
         <button type="button" id="btDelete" name="btDelete">Delete</button>
     </form>
 </div>
-<script src="./js/jquery-1.12.0.js"></script>
+<script src="js/jquery-1.12.0.js"></script>
+<script src="js/ajax.js"></script>
 </body>
 </html>

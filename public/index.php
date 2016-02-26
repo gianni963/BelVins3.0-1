@@ -47,7 +47,7 @@ $app->get('/api/wine',  function($request, $response, $args){
     if ($request->isXhr()) {
         echo '{"wine": ' . $vinsJSON . '}';
     }else{
-        return $this->view->render($response, 'form.php', array('vins' => $vinsJSON));
+        return $this->view->render($response, 'listing.html', array('vins' => $vinsJSON));
     }
 })->setName('getWines');
 
@@ -73,7 +73,7 @@ $app->get('/api/wine/{id}',  function($request, $response, $args){
     if ($request->isXhr()) {
         echo '{"wine": ' . $vinsJSON . '}';
     }else{
-        return $this->view->render($response, 'form.php', array('vins' => $vinsJSON));
+        return $this->view->render($response, 'listing.html', array('vins' => $vinsJSON));
     }
 })->setName('getWinesById');
 
@@ -185,7 +185,7 @@ $app->get('/api/wine/filter/{type}',  function($request, $response, $args){
     if ($request->isXhr()) {
         echo '{"wine": ' . $vinsJSON . '}';
     }else{
-        return $this->view->render($response, 'form.php', array('vins' => $vinsJSON));
+        return $this->view->render($response, 'listing.html', array('vins' => $vinsJSON));
     }
 })->setName('filterWines');
 
@@ -206,7 +206,7 @@ $app->get('/api/wine/page/{number:[0-9]+}',  function($request, $response, $args
     if ($request->isXhr()) {
         echo '{"wine": ' . $vinsJSON . '}';
     }else{
-        return $this->view->render($response, 'form.php', array('vins' => $vinsJSON));
+        return $this->view->render($response, 'listing.html', array('vins' => $vinsJSON));
     }
 })->setName('pagesWines');
 

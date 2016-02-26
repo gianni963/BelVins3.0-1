@@ -11,7 +11,7 @@ $(document).ready(function() {
                 $("#listeVin").append("<li data-id='"+vins[i].id+"'>" + vins[i].name + "</li>");
                 liste.push(vins[i].name);
             }
-            //Animations
+            //Animations du menu Vins
             $("#listeVin").on({
                 mouseover:function () {
                     $(this).addClass('highlight');
@@ -52,7 +52,44 @@ $(document).ready(function() {
 
             },// fin liste des events sur #listeVin
             "li"
-            ); //fin de .on()
+            ); //fin de .on() pour #listeVIn
+            //Animations des boutons
+                //Nouveau Vin
+            $("#btReset").click(function(){
+                var traversing = $(this).closest("body");
+                var vin = $(this).closest("body").find("#listeVin :last-child");
+                var id_wine = (vin.data("id"));
+                var src_pic= "#";
+                var alt_pic="";
+                traversing.find('#idVin').val(id_wine+1);
+                traversing.find('#nameVin').val("");
+                traversing.find('#grapesVin').val("");
+                traversing.find('#countryVin').val("");
+                traversing.find('#regionVin').val("");
+                traversing.find('#yearVin').val("");
+                traversing.find('#description').val("");
+                traversing.find('#imgVin').attr("src", src_pic);
+                traversing.find('#imgVin').attr("alt", alt_pic);
+                traversing.find('#imgVin').css("visibility", "hidden");
+            });
+                //Sauvegarde du Vin
+            $("#btSubmit").click(function(){});//TODO: message de validation voir si vs. avec Foundation
+                //Suppression du Vin
+            $("#btDelete").click(function(){
+                var traversing = $(this).closest("body");
+                var src_pic= "#";
+                var alt_pic="";
+                traversing.find('#idVin').val("");
+                traversing.find('#nameVin').val("");
+                traversing.find('#grapesVin').val("");
+                traversing.find('#countryVin').val("");
+                traversing.find('#regionVin').val("");
+                traversing.find('#yearVin').val("");
+                traversing.find('#description').val("");
+                traversing.find('#imgVin').attr("src", src_pic);
+                traversing.find('#imgVin').attr("alt", alt_pic);
+                traversing.find('#imgVin').css("visibility", "hidden");
+            });//TODO: message de validation voir si vs. avec Foundation
             //JQUERYUI: Autocomplete
             $.getScript("js/jquery-ui.js",function(){
                 $("#searchVin").autocomplete({
@@ -82,9 +119,6 @@ $(document).ready(function() {
                             traversing.find('#imgVin').attr("src", src_pic);
                             traversing.find('#imgVin').attr("alt", alt_pic);
                             traversing.find('#imgVin').css("visibility", "visible");
-
-
-
                         }
 
                     }
@@ -92,7 +126,11 @@ $(document).ready(function() {
 
             });
         },
-        error:function(){alert("Impossible de rcup&eacute;rer la Base de donn&eacute;es. Veuillez contacter l'administrateur du site");}
+        error:function(){
+            alert("Impossible de r\351cup\351rer la Base de donn\351es. Veuillez contacter l'administrateur du site");
+            $("button").addClass("disabled");
+            $("input,textarea").attr("readonly","readonly")
+        }
 
     });
 });

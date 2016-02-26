@@ -62,7 +62,7 @@
         <div class="large-6 columns">
             <button type="button" id="btReset" name="btReset">New</button>
             <label for="idVin">Id:</label>
-            <input type="text" id="idVin" name="name" maxlength="50" readonly/>
+            <input type="text" id="idVin" name="name" maxlength="50"/>
             <label for="nameVin">Name:</label>
             <input type="text" id="nameVin" name="name" maxlength="50"/>
             <label for="grapesVin">Grapes:</label>
@@ -80,7 +80,7 @@
         <div class="large-3 columns">
                     <img src="#" alt=#" id="imgVin"/>
                     <label for="description" >Description :</label>
-                    <textarea id="description" name="description" rows="10" cols="25" maxlength="500" style="float: left"></textarea>
+                    <textarea id="description" name="description" rows="10" cols="25" maxlength="500"></textarea>
         </div>
                 <!--</form>-->
     </div>

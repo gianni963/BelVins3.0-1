@@ -41,9 +41,14 @@ $container['view'] = function ($container) {
 //Chercher tout les vins
 $app->get('/api/wine',  function($request, $response, $args){
     $vinsORM = R::findAll('wine');
-    $vinsJSON = R::exportAll( $vinsORM );
+    $vinsJSON = R::exportAll($vinsORM);;
+    $vinsJSON = json_encode($vinsJSON);
 
-    return $this->view->render($response, 'listing.html', array('vins' => $vinsJSON));
+    if ($request->isXhr()) {
+        echo '{"wine": ' . $vinsJSON . '}';
+    }else{
+        return $this->view->render($response, 'listing.html', array('vins' => $vinsJSON));
+    }
 })->setName('getWines');
 
 //Chercher vin par id ou par nom
@@ -54,18 +59,22 @@ $app->get('/api/wine/{id}',  function($request, $response, $args){
     if(preg_match('#[0-9]+#',$id)){
         $vinsORM = R::load('wine', $id);
         $vinsJSON = $vinsORM->export();
+        $vinsJSON = json_encode($vinsJSON);
     }
 
     if(preg_match('#[^0-9]#',$id)){
-        $vinsORM = R::find('wine',' name LIKE :name ',
+        $vinsORM = R::findAll('wine',' name LIKE :name ',
             array(':name' => '%' . $id . '%' )
         );
-        foreach($vinsORM as $idVins) {
-            $vinsJSON[] = $vinsORM[$idVins['id']]->export();
-        }
+        $vinsJSON = R::exportAll($vinsORM);
+        $vinsJSON = json_encode($vinsJSON);
     }
 
-    return $this->view->render($response, 'listing.html', array('vins' => $vinsJSON));
+    if ($request->isXhr()) {
+        echo '{"wine": ' . $vinsJSON . '}';
+    }else{
+        return $this->view->render($response, 'listing.html', array('vins' => $vinsJSON));
+    }
 })->setName('getWinesById');
 
 //Rajouter un vins
@@ -159,18 +168,25 @@ $app->get('/api/wine/filter/{type}',  function($request, $response, $args){
 
     if($type === 'name'){
         $vinsORM = R::findAll('wine',' ORDER by name');
-        $vinsJSON = R::exportAll( $vinsORM );
+        $vinsJSON = R::exportAll($vinsORM);
+        $vinsJSON = json_encode($vinsJSON);
     }
     if($type === 'id'){
         $vinsORM = R::findAll('wine',' ORDER by id');
-        $vinsJSON = R::exportAll( $vinsORM );
+        $vinsJSON = R::exportAll($vinsORM);
+        $vinsJSON = json_encode($vinsJSON);
     }
     if($type === 'year'){
         $vinsORM = R::findAll('wine',' ORDER by year');
-        $vinsJSON = R::exportAll( $vinsORM );
+        $vinsJSON = R::exportAll($vinsORM);
+        $vinsJSON = json_encode($vinsJSON);
     }
 
-    return $this->view->render($response, 'listing.html', array('vins' => $vinsJSON));
+    if ($request->isXhr()) {
+        echo '{"wine": ' . $vinsJSON . '}';
+    }else{
+        return $this->view->render($response, 'listing.html', array('vins' => $vinsJSON));
+    }
 })->setName('filterWines');
 
 //Système de pagination
@@ -184,9 +200,14 @@ $app->get('/api/wine/page/{number:[0-9]+}',  function($request, $response, $args
     $vinsORM = R::findAll('wine',' LIMIT :nbWines OFFSET :nextWine',
         array(':nbWines' => $nbWines, ':nextWine' => $nextwine)
     );
-    $vinsJSON = R::exportAll( $vinsORM );
+    $vinsJSON = R::exportAll($vinsORM);
+    $vinsJSON = json_encode($vinsJSON);
 
-    return $this->view->render($response, 'listing.html', array('vins' => $vinsJSON));
+    if ($request->isXhr()) {
+        echo '{"wine": ' . $vinsJSON . '}';
+    }else{
+        return $this->view->render($response, 'listing.html', array('vins' => $vinsJSON));
+    }
 })->setName('pagesWines');
 
 // Run app

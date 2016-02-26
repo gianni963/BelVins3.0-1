@@ -37,7 +37,7 @@ $(document).ready(function() {
                         if((id_wine+1) != data.wine[id_wine].id) {
                             alert("Erreur dans la BD: mauvaise indexation");
                             console.log("index du menu: "+id_wine);
-                            console.log("index du champs 'id' dans la bd: "+ vins[id_wine].id); //devrait être id_wine+1
+                            console.log("index du champs 'id' dans la bd: "+ data.wine[id_wine].id); //devrait être id_wine+1
                         }
                         else {
                             traversing.find('#idVin').val(data.wine[id_wine].id);
@@ -107,19 +107,19 @@ $(document).ready(function() {
                             $(this).closest("body").find("#listeVin li.active").removeClass("active");
                             $(this).closest("body").find("#listeVin li:contains("+choice+")").addClass( "active" );
                             var vin = $(this).closest("body").find("#listeVin li.active");
-                            var id_wine = vin.data("id");
-                            console.log(vins[id_wine]);
+                            var id_wine = data.wine.data("id");
+                            console.log(data.wine[id_wine]);
                             var traversing = $(this).closest("body");
-                            var src_pic= "pics/"+ vins[id_wine].picture;
-                            var alt_pic= "bouteille de /"+ vins[id_wine].name;
+                            var src_pic= "pics/"+ data.wine[id_wine].picture;
+                            var alt_pic= "bouteille de /"+ data.wine[id_wine].name;
 
-                            traversing.find('#idVin').val(vins[id_wine].id);
-                            traversing.find('#nameVin').val(vins[id_wine].name);
-                            traversing.find('#grapesVin').val(vins[id_wine].grapes);
-                            traversing.find('#countryVin').val(vins[id_wine].country);
-                            traversing.find('#regionVin').val(vins[id_wine].region);
-                            traversing.find('#yearVin').val(vins[id_wine].year);
-                            traversing.find('#description').val(vins[id_wine].description);
+                            traversing.find('#idVin').val(data.wine[id_wine].id);
+                            traversing.find('#nameVin').val(data.wine[id_wine].name);
+                            traversing.find('#grapesVin').val(data.wine[id_wine].grapes);
+                            traversing.find('#countryVin').val(data.wine[id_wine].country);
+                            traversing.find('#regionVin').val(data.wine[id_wine].region);
+                            traversing.find('#yearVin').val(data.wine[id_wine].year);
+                            traversing.find('#description').val(data.wine[id_wine].description);
                             traversing.find('#imgVin').attr("src", src_pic);
                             traversing.find('#imgVin').attr("alt", alt_pic);
                             traversing.find('#imgVin').css("visibility", "visible");

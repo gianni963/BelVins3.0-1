@@ -100,7 +100,7 @@ $app->post('/api/wine',  function($request, $response, $args){
         $wine->description = $_POST['description'];
     }
     if(!empty($_FILES['picture'])){
-        $resultat = move_uploaded_file($_FILES['picture']['tmp_name'],'../pictures/' . $_FILES['picture']['name']);
+        $resultat = move_uploaded_file($_FILES['picture']['tmp_name'],'../templates/pics/' . $_FILES['picture']['name']);
         $wine->picture = $_FILES['picture']['name'];
     }
 
@@ -146,7 +146,7 @@ $app->put('/api/wine/{id:[0-9]+}',  function($request, $response, $args){
         $vinsORM->description = $_POST['description'];
     }
     if(!empty($_FILES['picture'])){
-        $resultat = move_uploaded_file($_FILES['picture']['tmp_name'],'../pictures/' . $_FILES['picture']['name']);
+        $resultat = move_uploaded_file($_FILES['picture']['tmp_name'],'../templates/pics/' . $_FILES['picture']['name']);
         $vinsORM->picture = $_FILES['picture']['name'];
     }
 

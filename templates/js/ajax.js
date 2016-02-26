@@ -52,7 +52,7 @@ $(document).ready(function() {
 
             },// fin liste des events sur #listeVin
             "li"
-            ); //fin de .on()
+            ); //fin de .on() pour #listeVIn
             //JQUERYUI: Autocomplete
             $.getScript("js/jquery-ui.js",function(){
                 $("#searchVin").autocomplete({

@@ -11,7 +11,7 @@ $(document).ready(function() {
             var items = data == null ? [] : (data.wine instanceof Array ? data.wine : [data.wine]);
 
             $.each(items, function(index, wine) {
-                $("#listeVin").append("<li data-id='"+wine.id+"'>" + wine.name + "</li>");
+                $("#listeVin").append("<li data-id='"+wine.id+"'>"+"<a href='#'>"  + wine.name + "</a></li>");
                 liste.push(wine.name);
             });
 

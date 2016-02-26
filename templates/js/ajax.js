@@ -126,7 +126,11 @@ $(document).ready(function() {
 
             });
         },
-        error:function(){alert("Impossible de rcup&eacute;rer la Base de donn&eacute;es. Veuillez contacter l'administrateur du site");}
+        error:function(){
+            alert("Impossible de r\351cup\351rer la Base de donn\351es. Veuillez contacter l'administrateur du site");
+            $("button").addClass("disabled");
+            $("input,textarea").attr("readonly","readonly")
+        }
 
     });
 });

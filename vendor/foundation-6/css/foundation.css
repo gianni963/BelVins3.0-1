@@ -3020,7 +3020,7 @@ table.hover tr:nth-of-type(even):hover {
   border-radius: 0;
   margin-bottom: 1rem; }
   .thumbnail:hover, .thumbnail:focus {
-    box-shadow: 0 0 6px 1px red); }
+    box-shadow: 0 0 6px 1px red; }
 
 .title-bar {
   background: #0a0a0a;

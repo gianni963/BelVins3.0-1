@@ -38,18 +38,28 @@ $container['view'] = function ($container) {
 
 // ROUTING
 
+$app -> get('/api/catalogue', function (Request $request, Response $response, array $args) {
+  return $this->view->render($response, 'catalogue.html.twig');
+})->setName('catalogue');
+
 //Chercher tout les vins
 $app->get('/api/wine',  function($request, $response, $args){
     $vinsORM = R::findAll('wine');
-    $vinsJSON = R::exportAll($vinsORM);;
-    $vinsJSON = json_encode($vinsJSON);
+    $vins = R::exportAll($vinsORM);;
+    $vinsJSON = json_encode($vins);
 
     if ($request->isXhr()) {
         echo '{"wine": ' . $vinsJSON . '}';
     }else{
-        return $this->view->render($response, 'listing.html', array('vins' => $vinsJSON));
+        return $this->view->render($response, 'listing.html', array('vins' => $vins));
     }
 })->setName('getWines');
+
+
+
+
+
+
 
 //Chercher vin par id ou par nom
 $app->get('/api/wine/{id}',  function($request, $response, $args){
